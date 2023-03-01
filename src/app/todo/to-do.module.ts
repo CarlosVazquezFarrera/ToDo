@@ -1,21 +1,29 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { AddComponent } from './add/add.component';
-import { FooterComponent } from './footer/footer.component';
 import { ItemComponent } from './item/item.component';
 import { ListComponent } from './list/list.component';
+import { MaterialModule } from '../material.module';
+import { InfoComponent } from './info/info.component';
 
 
 
 @NgModule({
   declarations: [
     AddComponent,
-    FooterComponent,
     ItemComponent,
-    ListComponent
+    ListComponent,
+    InfoComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    MaterialModule
+  ],
+  exports: [
+    AddComponent,
+    ItemComponent,
+    ListComponent,
+    InfoComponent
   ]
 })
 export class ToDoModule { }

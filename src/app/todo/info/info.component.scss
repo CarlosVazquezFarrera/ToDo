@@ -1,0 +1,16 @@
+@use '/src/assets/variables' as v;
+.date{
+  display: flex;
+  justify-content: space-between;
+  justify-items: center;
+  .day, .month{
+    font-size:x-large;
+  }
+  .day {
+    color: v.$purple;
+  }
+  .month{
+    color: v.$gay-purple;
+  }
+
+}

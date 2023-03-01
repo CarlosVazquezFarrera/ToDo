@@ -1,1 +1,18 @@
-<p>item works!</p>
+<div class="d-flex align-items-center justify-content-between justify-content-xl-evenly">
+  <mat-checkbox class="task">Hola</mat-checkbox>
+  <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+    <mat-icon>more_vert</mat-icon>
+  </button>
+  <mat-menu #menu="matMenu">
+    <button mat-menu-item>
+      <mat-icon>delete</mat-icon>
+      <span>Delete</span>
+    </button>
+    <button mat-menu-item>
+      <mat-icon>edit</mat-icon>
+      <span>Edit</span>
+    </button>
+  </mat-menu>
+</div>
+
+
