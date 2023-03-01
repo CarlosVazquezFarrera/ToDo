@@ -10,6 +10,8 @@ import { HeaderComponent } from './shared/header/header.component';
 import { FooterComponent } from './shared/footer/footer.component';
 import { ToDoModule } from './components/todo/to-do.module';
 import { MenuComponent } from './shared/menu/menu.component';
+import { StoreModule } from '@ngrx/store';
+import { todoReducer } from './state/reducers/todo.reducer';
 
 
 @NgModule({
@@ -25,7 +27,8 @@ import { MenuComponent } from './shared/menu/menu.component';
     AppRoutingModule,
     BrowserAnimationsModule,
     MaterialModule,
-    ToDoModule
+    ToDoModule,
+    StoreModule.forRoot({ todos: todoReducer })
   ],
   providers: [],
   bootstrap: [AppComponent]
