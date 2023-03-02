@@ -1,17 +1,22 @@
-import { NgModule } from '@angular/core';
+import { NgModule, isDevMode } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { ActivitiesComponent } from './pages/activities/activities.component';
+
 import { MaterialModule } from './material.module';
+
+import { AppComponent } from './app.component';
+import { ActivitiesComponent } from './pages/activities/activities.component';
 import { HeaderComponent } from './shared/header/header.component';
 import { FooterComponent } from './shared/footer/footer.component';
 import { ToDoModule } from './components/todo/to-do.module';
 import { MenuComponent } from './shared/menu/menu.component';
+
 import { StoreModule } from '@ngrx/store';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+
 import { todoReducer } from './state/reducers/todo.reducer';
+import { ModalsModule } from './components/modals/modals.module';
 
 
 @NgModule({
@@ -28,7 +33,9 @@ import { todoReducer } from './state/reducers/todo.reducer';
     BrowserAnimationsModule,
     MaterialModule,
     ToDoModule,
-    StoreModule.forRoot({ todos: todoReducer })
+    ModalsModule,
+    StoreModule.forRoot({ todos: todoReducer }),
+    StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: !isDevMode() })
   ],
   providers: [],
   bootstrap: [AppComponent]

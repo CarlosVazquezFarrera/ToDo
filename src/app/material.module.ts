@@ -9,6 +9,7 @@ import { MatListModule } from '@angular/material/list';
 import { MatInputModule } from '@angular/material/input';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatMenuModule } from '@angular/material/menu';
+import { MatDialogModule } from '@angular/material/dialog';
 
 
 
@@ -22,7 +23,8 @@ import { MatMenuModule } from '@angular/material/menu';
     MatListModule,
     MatInputModule,
     MatCheckboxModule,
-    MatMenuModule
+    MatMenuModule,
+    MatDialogModule
   ],
   exports: [
     MatToolbarModule,
@@ -32,7 +34,8 @@ import { MatMenuModule } from '@angular/material/menu';
     MatListModule,
     MatInputModule,
     MatCheckboxModule,
-    MatMenuModule
+    MatMenuModule,
+    MatDialogModule
   ]
 })
 export class MaterialModule { }
