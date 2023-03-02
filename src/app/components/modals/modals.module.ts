@@ -1,7 +1,9 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { AddTaskComponent } from './add-task/add-task.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
+import { AddTaskComponent } from './add-task/add-task.component';
+import { MaterialModule } from 'src/app/material.module';
 
 
 @NgModule({
@@ -9,7 +11,9 @@ import { AddTaskComponent } from './add-task/add-task.component';
     AddTaskComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    MaterialModule,
+    ReactiveFormsModule,
   ],
   exports:[AddTaskComponent]
 })

@@ -14,8 +14,6 @@ export class ModalsService {
 
   private modals = Array<MatDialogRef<unknown, unknown>>();
 
-  private modalDiccionary = new Map<string, MatDialogRef<unknown, unknown>>();
-
   /***
    * Display a new modal on the screen
    */
@@ -23,7 +21,7 @@ export class ModalsService {
     let matDialogRef: MatDialogRef<unknown, unknown> = Object.create(MatDialogRef);
     switch (key) {
       case ModalsKeys.addTask:
-        return this.addAndOpenModal({ component: AddTaskComponent, key: key });
+        return this.addAndOpenModal({ component: AddTaskComponent});
       default:
         return matDialogRef;
     }
@@ -52,8 +50,8 @@ export class ModalsService {
    * @para Data
    * @returns
    */
-  private addAndOpenModal<C, T>({ component, key, data }: { component: ComponentType<C>, key: string, data?: T }): MatDialogRef<unknown, unknown> {
-    const dialog = this.dialog.open(component, { disableClose: true, });
+  private addAndOpenModal<C, T>({ component, data }: { component: ComponentType<C>, data?: T }): MatDialogRef<unknown, unknown> {
+    const dialog = this.dialog.open(component, { disableClose: true, data: data });
     this.modals.push(dialog);
     return dialog;
   }

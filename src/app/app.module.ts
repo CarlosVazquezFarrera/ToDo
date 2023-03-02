@@ -17,6 +17,7 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 
 import { todoReducer } from './state/reducers/todo.reducer';
 import { ModalsModule } from './components/modals/modals.module';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -31,6 +32,7 @@ import { ModalsModule } from './components/modals/modals.module';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
+    ReactiveFormsModule,
     MaterialModule,
     ToDoModule,
     ModalsModule,
