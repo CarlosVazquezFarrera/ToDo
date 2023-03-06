@@ -3,7 +3,7 @@ import { FormControl, Validators } from '@angular/forms';
 import { Store } from '@ngrx/store';
 import { AppState } from 'src/app/app.state';
 import { ModalsService } from 'src/app/services/modals.service';
-import { add } from 'src/app/state/actions/todo.actions';
+import { add } from 'src/app/state/actions/tasks.actions';
 
 
 @Component({
@@ -14,12 +14,11 @@ import { add } from 'src/app/state/actions/todo.actions';
 export class AddTaskComponent {
   //#region Constructor
   constructor(private store: Store<AppState>, private modalService: ModalsService) {
-    this.task = new FormControl('', { validators: [Validators.required] });
   }
   //#endregion
 
   //#region Properties
-  public task: FormControl;
+  public task: FormControl = new FormControl('', { validators: [Validators.required] });
   //#endregion
 
   //#region Methods

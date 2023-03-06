@@ -9,15 +9,15 @@ import { AppComponent } from './app.component';
 import { ActivitiesComponent } from './pages/activities/activities.component';
 import { HeaderComponent } from './shared/header/header.component';
 import { FooterComponent } from './shared/footer/footer.component';
-import { ToDoModule } from './components/todo/to-do.module';
 import { MenuComponent } from './shared/menu/menu.component';
 
 import { StoreModule } from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 
-import { todoReducer } from './state/reducers/todo.reducer';
+import { tasksReducer } from './state/reducers/tasks.reducer';
 import { ModalsModule } from './components/modals/modals.module';
 import { ReactiveFormsModule } from '@angular/forms';
+import { TasksModule } from './components/tasks/tasks.module';
 
 
 @NgModule({
@@ -34,9 +34,9 @@ import { ReactiveFormsModule } from '@angular/forms';
     BrowserAnimationsModule,
     ReactiveFormsModule,
     MaterialModule,
-    ToDoModule,
+    TasksModule,
     ModalsModule,
-    StoreModule.forRoot({ todos: todoReducer }),
+    StoreModule.forRoot({ tasks: tasksReducer }),
     StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: !isDevMode() })
   ],
   providers: [],
