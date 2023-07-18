@@ -1,8 +1,5 @@
 @use '/src/assets/variables' as v;
 .date{
-  display: flex;
-  justify-content: space-between;
-  justify-items: center;
   .day, .month{
     font-size:x-large;
   }
@@ -12,5 +9,4 @@
   .month{
     color: v.$gay-purple;
   }
-
 }

@@ -1,9 +1,7 @@
-<section>
-  <h2 *ngIf="tasks$ | async as tasks; else showEmptyState">
-    <app-item *ngFor="let task of tasks"></app-item>
-  </h2>
-    <ng-template #showEmptyState>
-      <h3 class="text-center">No data</h3>
-    </ng-template>
+<section *ngIf="tasks$ | async as tasks">
+  <div class="tasks">
+    <app-item *ngFor="let task of tasks" [task]="task"></app-item>
+  </div>
+    <h3 *ngIf="tasks.length == 0" class="text-center">No data</h3>
 </section>
 
