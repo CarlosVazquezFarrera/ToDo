@@ -1,14 +1,25 @@
 import { createReducer, on } from '@ngrx/store';
 import { Task } from 'src/app/models/task';
-import { add } from '../actions/tasks.actions';
-const c = new Task('Example23');
-c.completed = true;
-export const initialState:Array<Task> = [
+import { add, toggle } from '../actions/tasks.actions';
+
+
+export const initialState: Array<Task> = [
   new Task('example'),
-  c
+  new Task('example 2'),
 ];
 
 export const tasksReducer = createReducer(
   initialState,
   on(add, (state, { text }) => [...state, new Task(text)]),
+  on(toggle, (state, { id }) => {
+    return state.map((todo) => {
+      if (todo.id === id) {
+        return {
+          ...todo,
+          completed: !todo.completed
+        };
+      }
+      return todo;
+    });
+  })
 );

@@ -2,7 +2,7 @@ import { ComponentType } from '@angular/cdk/portal';
 import { Injectable } from '@angular/core';
 import { MatDialog, MatDialogRef } from '@angular/material/dialog';
 import { lastValueFrom } from 'rxjs';
-import { AddTaskComponent } from '../components/modals/add-task/add-task.component';
+import { AddEditTaskComponent } from '../components/modals/add-edit-task/add-edit-task.component';
 import { ModalsKeys } from '../components/modals/modalKeys';
 
 @Injectable({
@@ -21,7 +21,7 @@ export class ModalsService {
     let matDialogRef: MatDialogRef<unknown, unknown> = Object.create(MatDialogRef);
     switch (key) {
       case ModalsKeys.addTask:
-        return this.addAndOpenModal({ component: AddTaskComponent});
+        return this.addAndOpenModal({ component: AddEditTaskComponent});
       default:
         return matDialogRef;
     }

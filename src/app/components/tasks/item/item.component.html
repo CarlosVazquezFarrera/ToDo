@@ -1,5 +1,5 @@
 <div class="d-flex align-items-center justify-content-between">
-  <mat-checkbox color="primary" class="task">{{task.text}}</mat-checkbox>
+  <mat-checkbox [formControl]="check"  color="primary" class="task">{{task.text}}</mat-checkbox>
   <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
     <mat-icon>more_vert</mat-icon>
   </button>

@@ -2,19 +2,19 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule } from '@angular/forms';
 
-import { AddTaskComponent } from './add-task/add-task.component';
 import { MaterialModule } from 'src/app/material.module';
+import { AddEditTaskComponent } from './add-edit-task/add-edit-task.component';
 
 
 @NgModule({
   declarations: [
-    AddTaskComponent
+    AddEditTaskComponent
   ],
   imports: [
     CommonModule,
     MaterialModule,
     ReactiveFormsModule,
   ],
-  exports:[AddTaskComponent]
+  exports:[AddEditTaskComponent]
 })
 export class ModalsModule { }

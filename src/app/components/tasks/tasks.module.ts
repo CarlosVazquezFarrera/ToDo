@@ -6,6 +6,7 @@ import { ListComponent } from './list/list.component';
 import { InfoComponent } from './info/info.component';
 
 import { MaterialModule } from 'src/app/material.module';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -16,6 +17,7 @@ import { MaterialModule } from 'src/app/material.module';
   ],
   imports: [
     CommonModule,
+    ReactiveFormsModule,
     MaterialModule
   ],
   exports: [
