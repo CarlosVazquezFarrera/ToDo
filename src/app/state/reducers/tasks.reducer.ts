@@ -1,6 +1,6 @@
 import { createReducer, on } from '@ngrx/store';
 import { Task } from 'src/app/models/task';
-import { add, edit, remove, toggle } from '../actions/tasks.actions';
+import { add, edit, remove, toggle, toggleAll } from '../actions/tasks.actions';
 
 
 export const initialState: Array<Task> = [
@@ -33,5 +33,13 @@ export const tasksReducer = createReducer(
       }
       return todo;
     });
+  }),
+  on(toggleAll, (state, { completed }) => {
+    return state.map((todo) => {
+      return {
+        ...todo,
+        completed: completed
+      };
+    })
   })
 );

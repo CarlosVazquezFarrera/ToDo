@@ -3,6 +3,7 @@ import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
 import { AppState } from 'src/app/app.state';
 import { Task } from 'src/app/models/task';
+import { toggleAll } from 'src/app/state/actions/tasks.actions';
 
 @Component({
   selector: 'app-info',
@@ -15,4 +16,11 @@ export class InfoComponent {
   }
 
   public tasks$!: Observable<Task[]>;
+
+  private completed: boolean = false;
+
+  public toggleAll(): void {
+    this.completed = !this.completed;
+    this.store.dispatch(toggleAll({ completed: this.completed }));
+  }
 }

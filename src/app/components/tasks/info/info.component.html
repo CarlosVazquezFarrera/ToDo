@@ -1,4 +1,4 @@
 <div class="d-flex align-items-center justify-content-between mb-1 mb-md-3 mb-xl-4" *ngIf="tasks$ | async as tasks">
   <span class="task-count">All Tasks ({{tasks.length}})</span>
-  <mat-slide-toggle color="primary"></mat-slide-toggle>
+  <mat-slide-toggle color="primary" (toggleChange)="toggleAll()"></mat-slide-toggle>
 </div>
