@@ -4,11 +4,13 @@ import { ReactiveFormsModule } from '@angular/forms';
 
 import { MaterialModule } from 'src/app/material.module';
 import { AddEditTaskComponent } from './add-edit-task/add-edit-task.component';
+import { ConfirmationComponent } from './confirmation/confirmation.component';
 
 
 @NgModule({
   declarations: [
-    AddEditTaskComponent
+    AddEditTaskComponent,
+    ConfirmationComponent
   ],
   imports: [
     CommonModule,

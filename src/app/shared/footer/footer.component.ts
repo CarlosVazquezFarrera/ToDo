@@ -13,7 +13,13 @@ export class FooterComponent {
 
   }
 
+  today = new Date();
+
   public addTask(): void {
-    this.modalsService.pushModal(ModalsKeys.addTask);
+    this.modalsService.pushModal(ModalsKeys.addEditTask);
+  }
+
+  public get year(): number {
+    return this.today.getFullYear();
   }
 }

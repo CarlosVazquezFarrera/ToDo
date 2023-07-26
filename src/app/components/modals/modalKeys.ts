@@ -1,3 +1,4 @@
 export enum ModalsKeys {
-  addTask = 'addTask',
+  addEditTask = 'addEditTask',
+  confirmation = 'confirmation'
 };

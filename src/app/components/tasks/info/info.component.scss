@@ -1,12 +1,11 @@
-@use '/src/assets/variables' as v;
-.date{
-  .day, .month{
-    font-size:x-large;
-  }
-  .day {
-    color: v.$purple;
-  }
-  .month{
-    color: v.$gay-purple;
-  }
+@import '/src/assets/bootstrap-global';
+
+.task-count {
+    @include media-breakpoint-up(md) {
+        font-size:large;
+    }
+
+    @include media-breakpoint-up(xl) {
+        font-size:x-large
+    }
 }

@@ -10,6 +10,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatDialogModule } from '@angular/material/dialog';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 
 
 
@@ -24,7 +25,8 @@ import { MatDialogModule } from '@angular/material/dialog';
     MatInputModule,
     MatCheckboxModule,
     MatMenuModule,
-    MatDialogModule
+    MatDialogModule,
+    MatSlideToggleModule
   ],
   exports: [
     MatToolbarModule,
@@ -35,7 +37,8 @@ import { MatDialogModule } from '@angular/material/dialog';
     MatInputModule,
     MatCheckboxModule,
     MatMenuModule,
-    MatDialogModule
+    MatDialogModule,
+    MatSlideToggleModule
   ]
 })
 export class MaterialModule { }

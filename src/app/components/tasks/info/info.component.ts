@@ -1,4 +1,8 @@
 import { Component } from '@angular/core';
+import { Store } from '@ngrx/store';
+import { Observable } from 'rxjs';
+import { AppState } from 'src/app/app.state';
+import { Task } from 'src/app/models/task';
 
 @Component({
   selector: 'app-info',
@@ -6,21 +10,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./info.component.scss']
 })
 export class InfoComponent {
-  today = new Date();
-
-  //#region Gets
-
-  public get day(): string {
-    const days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
-    return days[this.today.getDay()]
+  constructor(private store: Store<AppState>) {
+    this.tasks$ = this.store.select('tasks');
   }
 
-  public get currentDay(): string {
-    return `${this.today.getDate()}th`;
-  }
-  public get month(): string {
-    const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
-    return months[this.today.getMonth()]
-  }
-  //#endregion
+  public tasks$!: Observable<Task[]>;
 }

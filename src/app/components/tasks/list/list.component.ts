@@ -13,5 +13,5 @@ export class ListComponent {
   constructor(private store: Store<AppState>) {
     this.tasks$ = this.store.select('tasks');
   }
-  public tasks$: Observable<Task[]>;
+  public tasks$!: Observable<Task[]>;
 }
