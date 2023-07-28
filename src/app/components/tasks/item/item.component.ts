@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { Store } from '@ngrx/store';
-import { AppState } from 'src/app/app.state';
+import { AppState } from 'src/app/app.reducer';
 import { Task } from 'src/app/models/task';
 import { ModalsService } from 'src/app/services/modals.service';
 import { remove, toggle } from 'src/app/state/actions/tasks.actions';

@@ -2,7 +2,7 @@ import { Component, Inject } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
 import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { Store } from '@ngrx/store';
-import { AppState } from 'src/app/app.state';
+import { AppState } from 'src/app/app.reducer';
 import { Task } from 'src/app/models/task';
 import { ModalsService } from 'src/app/services/modals.service';
 import { add, edit } from 'src/app/state/actions/tasks.actions';

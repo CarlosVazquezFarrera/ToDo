@@ -14,10 +14,10 @@ import { MenuComponent } from './shared/menu/menu.component';
 import { StoreModule } from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 
-import { tasksReducer } from './state/reducers/tasks.reducer';
 import { ModalsModule } from './components/modals/modals.module';
 import { ReactiveFormsModule } from '@angular/forms';
 import { TasksModule } from './components/tasks/tasks.module';
+import { appReducer } from './app.reducer';
 
 
 @NgModule({
@@ -36,7 +36,7 @@ import { TasksModule } from './components/tasks/tasks.module';
     MaterialModule,
     TasksModule,
     ModalsModule,
-    StoreModule.forRoot({ tasks: tasksReducer }),
+    StoreModule.forRoot(appReducer),
     StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: !isDevMode() })
   ],
   providers: [],

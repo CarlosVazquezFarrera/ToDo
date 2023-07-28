@@ -1,6 +1,6 @@
 
-<mat-drawer-container opend>
-  <mat-drawer mode="over">Drawer content</mat-drawer>
+<mat-drawer-container [autosize]="true">
+  <mat-drawer [disableClose]="true" [opened]="isOpen" mode="over"></mat-drawer>
   <mat-drawer-content>
     <ng-content></ng-content>
   </mat-drawer-content>

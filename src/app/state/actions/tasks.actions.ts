@@ -6,21 +6,21 @@ export const add = createAction(
 );
 
 export const toggle = createAction(
-  '[Todo] toggle',
+  '[Task] toggle',
   props<{ id: string }>()
 );
 
 export const edit = createAction(
-  '[Todo] edit',
+  '[Task] edit',
   props<{ id: string, text: string }>()
 );
 
 export const remove = createAction(
-  '[Todo] remove',
+  '[Task] remove',
   props<{ id: string }>()
 );
 
 export const toggleAll = createAction(
-  '[Todo] toggle all',
+  '[Task] toggle all',
   props<{ completed: boolean }>()
 );

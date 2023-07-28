@@ -1,4 +1,12 @@
-<div class="date d-flex align-items-center justify-content-around">
-  <span class="day">{{day}}, <span>{{currentDay}}</span> </span>
-  <span class="month">{{month}}</span>
-</div>
+<mat-toolbar color="primary">
+  <mat-toolbar-row>
+    <button mat-icon-button (click)="toggleMenu()">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <span class="example-spacer"></span>
+    <div class="d-flex align-items-center">
+      <span class="day">{{day}}, <span>{{currentDay}}</span> </span>
+      <span class="month">{{month}}</span>
+    </div>
+  </mat-toolbar-row>
+</mat-toolbar>

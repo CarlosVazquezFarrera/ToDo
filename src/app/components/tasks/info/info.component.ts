@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
-import { AppState } from 'src/app/app.state';
+import { AppState } from 'src/app/app.reducer';
 import { Task } from 'src/app/models/task';
 import { toggleAll } from 'src/app/state/actions/tasks.actions';
 

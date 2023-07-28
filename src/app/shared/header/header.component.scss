@@ -1,9 +1,12 @@
 @use '/src/assets/variables' as v;
+
 .date{
-  background-color: v.$dark-purple;
-  height: 45px;
   .day, .month{
     font-size:x-large;
     color: white;
   }
+}
+
+.example-spacer {
+  flex: 1 1 auto;
 }

@@ -1,4 +1,26 @@
+@import '/src/assets/bootstrap-global';
+
+
 mat-drawer-container{
-  height: 80vh;
+  height: calc(100vh - 56px);
+
+  @include media-breakpoint-up(md) {
+    height: calc(100vh - 64px);
+  }
   background-color: white;
+
+  mat-drawer {
+    width: 60%;
+
+    @include media-breakpoint-up(md) {
+      width: 50%;
+    }
+    @include media-breakpoint-up(xl) {
+      width: 30%;
+    }
+  }
+  mat-drawer-content {
+    height: auto;
+  }
 }
+
