@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ModalsKeys } from 'src/app/components/modals/modalKeys';
+import { ModalsKeys } from 'src/app/components/modals/modal-keys';
 import { ModalsService } from 'src/app/services/modals.service';
 
 @Component({

@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import { MatDialog, MatDialogRef } from '@angular/material/dialog';
 import { lastValueFrom } from 'rxjs';
 import { AddEditTaskComponent } from '../components/modals/add-edit-task/add-edit-task.component';
-import { ModalsKeys } from '../components/modals/modalKeys';
+import { ModalsKeys } from '../components/modals/modal-keys';
 import { ConfirmationComponent } from '../components/modals/confirmation/confirmation.component';
 
 @Injectable({

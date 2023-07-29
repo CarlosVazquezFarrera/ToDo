@@ -1,6 +1,13 @@
 
 <mat-drawer-container [autosize]="true">
-  <mat-drawer [disableClose]="true" [opened]="isOpen" mode="over"></mat-drawer>
+  <mat-drawer [disableClose]="true" [opened]="isOpen" mode="over">
+    <mat-list>
+      <mat-list-item *ngFor="let item of menuItems" (click)="changePage(item.route)">
+        <mat-icon matListItemIcon>{{item.icon}}</mat-icon>
+        <div matListItemTitle>{{item.route}}</div>
+      </mat-list-item>
+     </mat-list>
+  </mat-drawer>
   <mat-drawer-content>
     <ng-content></ng-content>
   </mat-drawer-content>

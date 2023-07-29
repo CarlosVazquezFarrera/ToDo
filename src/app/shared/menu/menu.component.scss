@@ -1,5 +1,5 @@
+@use '/src/assets/variables' as v;
 @import '/src/assets/bootstrap-global';
-
 
 mat-drawer-container{
   height: calc(100vh - 56px);
@@ -17,6 +17,12 @@ mat-drawer-container{
     }
     @include media-breakpoint-up(xl) {
       width: 30%;
+    }
+    mat-list-item {
+      &:hover {
+        cursor: pointer;
+        background-color: v.$gay-purple;
+      }
     }
   }
   mat-drawer-content {
