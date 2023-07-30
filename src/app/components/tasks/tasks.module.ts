@@ -7,13 +7,15 @@ import { InfoComponent } from './info/info.component';
 
 import { MaterialModule } from 'src/app/material.module';
 import { ReactiveFormsModule } from '@angular/forms';
+import { CompletedItemComponent } from './completed-item/completed-item.component';
 
 
 @NgModule({
   declarations: [
     ItemComponent,
     ListComponent,
-    InfoComponent
+    InfoComponent,
+    CompletedItemComponent
   ],
   imports: [
     CommonModule,
@@ -23,7 +25,8 @@ import { ReactiveFormsModule } from '@angular/forms';
   exports: [
     ItemComponent,
     ListComponent,
-    InfoComponent
+    InfoComponent,
+    CompletedItemComponent
   ]
 })
 export class TasksModule { }

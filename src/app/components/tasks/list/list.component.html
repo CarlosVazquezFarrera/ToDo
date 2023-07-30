@@ -1,7 +1,8 @@
-<section *ngIf="tasks$ | async as tasks">
+<section>
   <div class="tasks">
-    <app-item *ngFor="let task of tasks" [task]="task"></app-item>
+    <ng-container *ngFor="let task of tasks">
+      <app-item *ngIf="task.completed === showCompleteOnes" [task]="task"></app-item>
+    </ng-container>
   </div>
-    <h3 *ngIf="tasks.length == 0" class="text-center">No data</h3>
+  <h3 *ngIf="tasks.length == 0" class="text-center">No data</h3>
 </section>
-

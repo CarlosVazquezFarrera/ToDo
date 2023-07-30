@@ -5,8 +5,8 @@ export const add = createAction(
   props<{ text: string }>()
 );
 
-export const toggle = createAction(
-  '[Task] toggle',
+export const complet = createAction(
+  '[Task] complet',
   props<{ id: string }>()
 );
 

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { Observable} from 'rxjs';
 import { AppState } from 'src/app/app.reducer';
@@ -10,8 +10,14 @@ import { Task } from 'src/app/models/task';
   styleUrls: ['./list.component.scss']
 })
 export class ListComponent {
+  @Input() showCompleteOnes: boolean = false;
+
   constructor(private store: Store<AppState>) {
-    this.tasks$ = this.store.select('tasks');
+    this.store.select('tasks').subscribe((task)=>{
+      this.tasks = task.filter(task => !task.completed)
+    });
   }
-  public tasks$!: Observable<Task[]>;
+
+  public tasks!: Task[];
+
 }

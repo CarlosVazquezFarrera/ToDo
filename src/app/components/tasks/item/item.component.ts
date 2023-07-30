@@ -4,10 +4,10 @@ import { Store } from '@ngrx/store';
 import { AppState } from 'src/app/app.reducer';
 import { Task } from 'src/app/models/task';
 import { ModalsService } from 'src/app/services/modals.service';
-import { remove, toggle } from 'src/app/state/actions/tasks.actions';
+import { complet, remove } from 'src/app/state/actions/tasks.actions';
 import { ModalsKeys } from '../../modals/modal-keys';
 import metadata from '../item/item.metadata.json';
-import { Observable, firstValueFrom } from 'rxjs';
+import { firstValueFrom } from 'rxjs';
 
 @Component({
   selector: 'app-item',
@@ -31,7 +31,7 @@ export class ItemComponent implements OnInit {
 
   private suscribeToChanges(): void {
     this.check.valueChanges.subscribe(() => {
-      this.store.dispatch(toggle({ id: this.task.id }));
+      this.store.dispatch(complet({ id: this.task.id }));
     });
   }
 

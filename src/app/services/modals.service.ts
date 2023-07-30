@@ -11,7 +11,7 @@ import { ConfirmationComponent } from '../components/modals/confirmation/confirm
 })
 export class ModalsService {
 
-  constructor(public dialog: MatDialog) { }
+  constructor(private dialog: MatDialog) { }
 
   private modals = Array<MatDialogRef<unknown, unknown>>();
 

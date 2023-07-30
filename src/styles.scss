@@ -5,3 +5,17 @@ body { margin: 0;}
 
 @import "../node_modules/bootstrap/scss/bootstrap";
 
+@import '/src/assets/bootstrap-global';
+
+.main {
+  margin-top: 10px;
+  .content {
+    @include media-breakpoint-up(lg) {
+      margin: 0 15vw;
+    }
+
+    @include media-breakpoint-up(xl) {
+      margin: 0 10vw;
+    }
+  }
+}

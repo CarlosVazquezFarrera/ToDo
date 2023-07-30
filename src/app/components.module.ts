@@ -6,7 +6,7 @@ import { FooterComponent } from './shared/footer/footer.component';
 import { ActivitiesComponent } from './pages/activities/activities.component';
 import { MenuComponent } from './shared/menu/menu.component';
 import { SharedModule } from './shared.module';
-import { PendingComponent } from './pages/pending/pending.component';
+import { CompletedComponent } from './pages/completed/completed.component';
 
 
 
@@ -17,7 +17,7 @@ import { PendingComponent } from './pages/pending/pending.component';
     FooterComponent,
     ActivitiesComponent,
     MenuComponent,
-    PendingComponent
+    CompletedComponent
   ],
   imports: [
     CommonModule,
@@ -29,7 +29,7 @@ import { PendingComponent } from './pages/pending/pending.component';
     FooterComponent,
     ActivitiesComponent,
     MenuComponent,
-    PendingComponent
+    CompletedComponent
   ]
 })
 export class ComponentsModule { }
