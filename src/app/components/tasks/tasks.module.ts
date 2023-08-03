@@ -8,6 +8,7 @@ import { InfoComponent } from './info/info.component';
 import { MaterialModule } from 'src/app/material.module';
 import { ReactiveFormsModule } from '@angular/forms';
 import { CompletedItemComponent } from './completed-item/completed-item.component';
+import { PipesModule } from 'src/app/pipes/pipes.module';
 
 
 @NgModule({
@@ -20,7 +21,8 @@ import { CompletedItemComponent } from './completed-item/completed-item.componen
   imports: [
     CommonModule,
     ReactiveFormsModule,
-    MaterialModule
+    MaterialModule,
+    PipesModule
   ],
   exports: [
     ItemComponent,

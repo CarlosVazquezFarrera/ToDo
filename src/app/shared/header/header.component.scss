@@ -1,11 +1,12 @@
 @use '/src/assets/variables' as v;
 
-.date{
-  .day, .month{
+  .day, .month {
     font-size:x-large;
     color: white;
   }
-}
+  .month {
+    margin-left: 10px;
+  }
 
 .example-spacer {
   flex: 1 1 auto;

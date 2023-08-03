@@ -29,8 +29,10 @@ export class InfoComponent {
     if (this.noTasksAvailable) return;
     const confirmation$ = this.modalService.pushModal<string, boolean>(ModalsKeys.confirmation, metadata.confirmationMessage).beforeClosed();
     const confirmation =  await firstValueFrom(confirmation$);
-    if (!confirmation) return;
-
+    if (!confirmation) {
+      this.matSlideToggle.toggle();
+      return;
+    }
     this.completed = !this.completed;
     this.store.dispatch(toggleAll({ completed: this.completed }));
     this.matSlideToggle.toggle();

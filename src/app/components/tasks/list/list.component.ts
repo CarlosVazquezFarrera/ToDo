@@ -13,11 +13,8 @@ export class ListComponent {
   @Input() showCompleteOnes: boolean = false;
 
   constructor(private store: Store<AppState>) {
-    this.store.select('tasks').subscribe((task)=>{
-      this.tasks = task.filter(task => !task.completed)
-    });
+    this.task$ = this.store.select('tasks');
   }
 
-  public tasks!: Task[];
-
+  public task$!: Observable<Array<Task>>;
 }

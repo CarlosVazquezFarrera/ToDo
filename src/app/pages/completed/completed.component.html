@@ -1,8 +1,8 @@
-<div class="container main">
+<div class="container main" *ngIf="tasks$ | async as tasks">
   <div class="content">
     <mat-list role="completed">
-      <ng-container *ngFor="let task of tasks">
-        <app-completed-item *ngIf="task.completed" [task]="task.text"></app-completed-item>
+      <ng-container *ngFor="let task of tasks | filterTask">
+        <app-completed-item [task]="task.text"></app-completed-item>
       </ng-container>
     </mat-list>
   </div>

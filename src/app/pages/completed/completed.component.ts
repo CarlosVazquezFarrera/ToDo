@@ -12,9 +12,7 @@ import { Task } from 'src/app/models/task';
 export class CompletedComponent {
 
   constructor(private store: Store<AppState>) {
-    store.select('tasks').subscribe((task)=>{
-      this.tasks = task.filter(task => task.completed );
-    });
+    this.tasks$ = this.store.select('tasks');
   }
-  public tasks!: Task[];
+  public tasks$!: Observable<Array<Task>>;
 }

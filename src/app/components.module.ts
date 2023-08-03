@@ -7,6 +7,7 @@ import { ActivitiesComponent } from './pages/activities/activities.component';
 import { MenuComponent } from './shared/menu/menu.component';
 import { SharedModule } from './shared.module';
 import { CompletedComponent } from './pages/completed/completed.component';
+import { PipesModule } from './pipes/pipes.module';
 
 
 
@@ -21,7 +22,8 @@ import { CompletedComponent } from './pages/completed/completed.component';
   ],
   imports: [
     CommonModule,
-    SharedModule
+    SharedModule,
+    PipesModule
   ],
   exports: [
     AppComponent,
