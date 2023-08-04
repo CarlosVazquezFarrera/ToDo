@@ -2,12 +2,7 @@ import { createReducer, on } from '@ngrx/store';
 import { Task } from 'src/app/models/task';
 import { add, complet, edit, remove, toggleAll } from '../actions/tasks.actions';
 
-const completed = new Task("example 3");
-completed.completed = true;
 export const initialState: Array<Task> = [
-  new Task('example'),
-  new Task('example 2'),
-  completed
 ];
 
 export const tasksReducer = createReducer(

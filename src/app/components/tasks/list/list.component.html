@@ -1,8 +1,10 @@
 <section *ngIf="task$ | async as tasks">
-  <div class="tasks">
+  <div class="tasks" *ngIf="tasks.length > 0; else noDataAvailable">
     <ng-container *ngFor="let task of tasks | filterTask">
       <app-item [task]="task"></app-item>
     </ng-container>
   </div>
-  <h3 *ngIf="tasks.length == 0" class="text-center">No data</h3>
+  <ng-template #noDataAvailable>
+    <h3 class="text-center">No data</h3>
+  </ng-template>
 </section>

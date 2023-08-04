@@ -1,9 +1,12 @@
 <div class="container main" *ngIf="tasks$ | async as tasks">
   <div class="content">
-    <mat-list role="completed">
+    <mat-list role="completed" *ngIf="tasks.length > 0; else nodataAvailable">
       <ng-container *ngFor="let task of tasks | filterTask">
         <app-completed-item [task]="task.text"></app-completed-item>
       </ng-container>
     </mat-list>
+    <ng-template #nodataAvailable>
+      <h3 *ngIf="tasks.length == 0" class="text-center">No data</h3>
+    </ng-template>
   </div>
 </div>
