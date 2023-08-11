@@ -12,5 +12,5 @@ To-do application implementing Reactive State thrwo NGRX
 
 ## Demo
 
-https://carlosvazquezfarrera.github.io/ToDo
+https://carlosvazquezfarrera.github.io/ToDo/
 
