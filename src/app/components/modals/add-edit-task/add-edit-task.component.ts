@@ -6,6 +6,7 @@ import { AppState } from 'src/app/app.reducer';
 import { Task } from 'src/app/models/task';
 import { ModalsService } from 'src/app/services/modals.service';
 import { add, edit } from 'src/app/state/actions/tasks.actions';
+import metadata from './add-edit-task.metadata.json';
 
 @Component({
   selector: 'app-add-edit-task',
@@ -14,7 +15,7 @@ import { add, edit } from 'src/app/state/actions/tasks.actions';
 })
 export class AddEditTaskComponent {
   //#region Constructor
-  constructor(private store: Store<AppState>, private modalService: ModalsService, @Inject(MAT_DIALOG_DATA) public data: Task) {
+  constructor(private store: Store<AppState>, private modalService: ModalsService, @Inject(MAT_DIALOG_DATA) public data?: Task) {
     this.task = new FormControl(data?.text, { validators: [Validators.required] });
   }
   //#endregion
@@ -34,7 +35,7 @@ export class AddEditTaskComponent {
   public update(): void {
     this.task.markAsTouched();
     if (this.task.invalid || this.sameValue) return;
-    this.store.dispatch(edit({ id: this.data.id, text: this.task.value }));
+    this.store.dispatch(edit({ id: this.data!.id, text: this.task.value }));
     this.modalService.popModal();
   }
   //#endregion
@@ -48,11 +49,11 @@ export class AddEditTaskComponent {
   }
 
   public get text(): string {
-    return this.isNew ? 'New task' : 'Edit task';
+    return this.isNew ? metadata.new :metadata.edit;
   }
 
   public get sameValue(): boolean {
-    return this.data === this.task.value;
+    return this.data?.text === this.task.value;
   }
   //#endregion
 }

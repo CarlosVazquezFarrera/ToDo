@@ -21,6 +21,5 @@ export const remove = createAction(
 );
 
 export const toggleAll = createAction(
-  '[Task] toggle all',
-  props<{ completed: boolean }>()
+  '[Task] toggle all'
 );

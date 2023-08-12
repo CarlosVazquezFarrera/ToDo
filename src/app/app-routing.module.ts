@@ -4,7 +4,7 @@ import { ActivitiesComponent } from './pages/activities/activities.component';
 import { AppRoutes } from './app-routing-key';
 import { CompletedComponent } from './pages/completed/completed.component';
 
-const routes: Routes = [
+export const routes: Routes = [
   { path: '', redirectTo: AppRoutes.task.route, pathMatch: 'full' },
   { path: AppRoutes.task.route, component: ActivitiesComponent },
   { path: AppRoutes.completed.route, component: CompletedComponent }

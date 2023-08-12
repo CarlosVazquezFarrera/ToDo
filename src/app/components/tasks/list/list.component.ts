@@ -10,8 +10,6 @@ import { Task } from 'src/app/models/task';
   styleUrls: ['./list.component.scss']
 })
 export class ListComponent {
-  @Input() showCompleteOnes: boolean = false;
-
   constructor(private store: Store<AppState>) {
     this.task$ = this.store.select('tasks');
   }

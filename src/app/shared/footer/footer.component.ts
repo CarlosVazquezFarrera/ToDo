@@ -18,8 +18,4 @@ export class FooterComponent {
   public addTask(): void {
     this.modalsService.pushModal(ModalsKeys.addEditTask);
   }
-
-  public get year(): number {
-    return this.today.getFullYear();
-  }
 }

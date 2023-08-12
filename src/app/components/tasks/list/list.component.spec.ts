@@ -1,17 +1,14 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
-import { CompletedComponent } from './completed.component';
-import { Store } from '@ngrx/store';
+import { ListComponent } from './list.component';
 import { of } from 'rxjs';
-import { Task } from 'src/app/models/task';
+import { Store } from '@ngrx/store';
 
-describe('CompletedComponent', () => {
-  let component: CompletedComponent;
-  let fixture: ComponentFixture<CompletedComponent>;
-  const task: Array<Task> = [];
+describe('ListComponent', () => {
+  let component: ListComponent;
+  let fixture: ComponentFixture<ListComponent>;
   const storeMock = {
     select() {
-      return of(task);
+      return of([])
     }
   };
 
@@ -20,11 +17,11 @@ describe('CompletedComponent', () => {
       providers: [
         { provide: Store, useValue: storeMock }
       ],
-      declarations: [CompletedComponent]
+      declarations: [ListComponent]
     })
       .compileComponents();
 
-    fixture = TestBed.createComponent(CompletedComponent);
+    fixture = TestBed.createComponent(ListComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

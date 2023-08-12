@@ -7,7 +7,9 @@
     "build": "ng build",
     "build-git": "ng build --output-path docs --base-href /ToDo/",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+    "test-coverage": "ng test --watch --code-coverage",
+    "test-watch": "ng test --watch --code-coverage"
   },
   "private": true,
   "dependencies": {

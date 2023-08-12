@@ -1,15 +1,31 @@
 import { TestBed } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import { AppComponent } from './app.component';
+import { HeaderComponent } from './shared/header/header.component';
+import { Store } from '@ngrx/store';
+import { MenuComponent } from './shared/menu/menu.component';
+import { of } from 'rxjs';
+import { SharedModule } from './shared.module';
 
 describe('AppComponent', () => {
+  const storeMock = {
+    select() {
+      return of([])
+    }
+  };
   beforeEach(async () => {
     await TestBed.configureTestingModule({
+      providers: [
+        { provide: Store, useValue: storeMock }
+      ],
       imports: [
-        RouterTestingModule
+        RouterTestingModule,
+        SharedModule
       ],
       declarations: [
-        AppComponent
+        AppComponent,
+        HeaderComponent,
+        MenuComponent
       ],
     }).compileComponents();
   });
@@ -20,16 +36,4 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have as title 'ToDo'`, () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.componentInstance;
-    expect(app.title).toEqual('ToDo');
-  });
-
-  it('should render title', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    fixture.detectChanges();
-    const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('.content span')?.textContent).toContain('ToDo app is running!');
-  });
 });

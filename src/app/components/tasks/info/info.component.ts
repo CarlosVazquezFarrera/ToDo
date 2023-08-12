@@ -15,8 +15,8 @@ import { firstValueFrom } from 'rxjs';
 })
 export class InfoComponent {
   constructor(private store: Store<AppState>, private modalService: ModalsService) {
-    this.store.subscribe((state) => {
-      this.tasks = state.tasks.filter(t => !t.completed).length;
+    this.store.select('tasks').subscribe((tasks) => {
+      this.tasks = tasks.filter(t => !t.completed).length;
     });
   }
 
@@ -27,14 +27,14 @@ export class InfoComponent {
 
   public async toggleAll(): Promise<void> {
     if (this.noTasksAvailable) return;
-    const confirmation$ = this.modalService.pushModal<string, boolean>(ModalsKeys.confirmation, metadata.confirmationMessage).beforeClosed();
+    const confirmation$ = this.modalService.pushModal<string, boolean>(ModalsKeys.confirmation, metadata.confirmationMessage).afterClosed();
     const confirmation =  await firstValueFrom(confirmation$);
     if (!confirmation) {
       this.matSlideToggle.toggle();
       return;
     }
     this.completed = !this.completed;
-    this.store.dispatch(toggleAll({ completed: this.completed }));
+    this.store.dispatch(toggleAll());
     this.matSlideToggle.toggle();
   }
 

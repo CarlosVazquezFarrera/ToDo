@@ -31,11 +31,11 @@ export const tasksReducer = createReducer(
       return todo;
     });
   }),
-  on(toggleAll, (state, { completed }) => {
+  on(toggleAll, (state) => {
     return state.map((todo) => {
       return {
         ...todo,
-        completed: completed
+        completed: true
       };
     })
   })

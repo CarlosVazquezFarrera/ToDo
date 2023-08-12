@@ -20,9 +20,6 @@ export class MenuComponent {
     this.router.navigateByUrl(route);
     this.store.dispatch(toggleSideBar());
   }
-  private generateMap(): void {
-
-  }
 
   //#region Gets
   public get menuItems() {
